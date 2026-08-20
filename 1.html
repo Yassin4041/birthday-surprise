@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مفاجأة عيد ميلاد 🎂</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fdf6e3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 90%;
+            border-top: 5px solid #ff6b81;
+        }
+        h2 {
+            color: #2f3542;
+            margin-bottom: 20px;
+        }
+        input[type="date"] {
+            padding: 12px;
+            width: 80%;
+            margin-bottom: 20px;
+            border: 2px solid #dfe4ea;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+        button {
+            background-color: #ff6b81;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-family: inherit;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #ff4757;
+        }
+        #messageBox {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f1f2f6;
+            border-radius: 10px;
+            color: #e84118;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1.6;
+            direction: ltr; /* لجعل النص الإنجليزي يظهر بشكل صحيح */
+        }
+        .error {
+            color: #c23616;
+            margin-top: 15px;
+            font-size: 14px;
+            display: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>أدخل تاريخ ميلادك لترى المفاجأة! 🎈</h2>
+        <input type="date" id="birthdate">
+        <br>
+        <button onclick="checkDate()">عرض الرسالة</button>
+        
+        <div id="errorMsg" class="error">التاريخ غير صحيح، حاول مرة أخرى! 😉</div>
+        
+        <div id="messageBox">
+            🎉 happy birthday for u wish u all the best and happiness:) 🎉
+        </div>
+    </div>
+
+    <script>
+        function checkDate() {
+            const userDate = document.getElementById('birthdate').value;
+            
+            // تم تعديل التاريخ إلى 21 أغسطس 2006
+            const targetDate = "2006-08-21"; 
+
+            const messageBox = document.getElementById('messageBox');
+            const errorMsg = document.getElementById('errorMsg');
+
+            if (userDate === targetDate) {
+                messageBox.style.display = "block";
+                errorMsg.style.display = "none";
+            } else {
+                errorMsg.style.display = "block";
+                messageBox.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
